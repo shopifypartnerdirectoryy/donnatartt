@@ -88,6 +88,14 @@ function BookPage() {
                 </dd>
               </div>
             </dl>
+            <Link
+              to="/books"
+              search={{ q: "", work: book.slug, lang: "", format: "" }}
+              className="mt-8 inline-block border-b border-accent-foreground/50 pb-1 text-[0.62rem] uppercase tracking-[0.22em] text-accent-foreground"
+            >
+              {editionCountForWork(book.slug)} editions in{" "}
+              {languageCountForWork(book.slug)} languages &rarr;
+            </Link>
           </aside>
         </div>
 
