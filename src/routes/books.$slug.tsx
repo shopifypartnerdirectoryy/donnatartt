@@ -1,6 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteFooter, SiteHeader } from "@/components/archive-chrome";
 import { books, getBook } from "@/lib/books";
+import {
+  editionCountForWork,
+  languageCountForWork,
+  type WorkKey,
+} from "@/data/editions";
 
 export const Route = createFileRoute("/books/$slug")({
   loader: ({ params }) => {
@@ -88,6 +93,14 @@ function BookPage() {
                 </dd>
               </div>
             </dl>
+            <Link
+              to="/books"
+              search={{ q: "", work: book.slug, lang: "", format: "" }}
+              className="mt-8 inline-block border-b border-accent-foreground/50 pb-1 text-[0.62rem] uppercase tracking-[0.22em] text-accent-foreground"
+            >
+              {editionCountForWork(book.slug as WorkKey)} editions in{" "}
+              {languageCountForWork(book.slug as WorkKey)} languages &rarr;
+            </Link>
           </aside>
         </div>
 
