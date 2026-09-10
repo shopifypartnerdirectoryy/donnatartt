@@ -1,6 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteFooter, SiteHeader } from "@/components/archive-chrome";
 import { books, getBook } from "@/lib/books";
+import {
+  editionCountForWork,
+  languageCountForWork,
+  type WorkKey,
+} from "@/data/editions";
 
 export const Route = createFileRoute("/books/$slug")({
   loader: ({ params }) => {
