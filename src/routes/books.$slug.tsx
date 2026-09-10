@@ -98,8 +98,8 @@ function BookPage() {
               search={{ q: "", work: book.slug, lang: "", format: "" }}
               className="mt-8 inline-block border-b border-accent-foreground/50 pb-1 text-[0.62rem] uppercase tracking-[0.22em] text-accent-foreground"
             >
-              {editionCountForWork(book.slug)} editions in{" "}
-              {languageCountForWork(book.slug)} languages &rarr;
+              {editionCountForWork(book.slug as WorkKey)} editions in{" "}
+              {languageCountForWork(book.slug as WorkKey)} languages &rarr;
             </Link>
           </aside>
         </div>
