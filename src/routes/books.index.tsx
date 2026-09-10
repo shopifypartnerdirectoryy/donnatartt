@@ -221,7 +221,8 @@ function EditionsArchive() {
                   </h2>
                   {w.year ? (
                     <p className="mt-2 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
-                      {w.year} &middot; {rows.length} editions
+                      {w.year} &middot; {rows.length}{" "}
+                      {rows.length === 1 ? "edition" : "editions"}
                     </p>
                   ) : (
                     <p className="mt-2 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
