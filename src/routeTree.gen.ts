@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BooksRouteImport } from './routes/books'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PressRouteImport } from './routes/press'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as WritingRouteImport } from './routes/writing'
 import { Route as BooksIndexRouteImport } from './routes/books.index'
 import { Route as BooksSlugRouteImport } from './routes/books.$slug'
@@ -43,6 +44,11 @@ const PressRoute = PressRouteImport.update({
   path: '/press',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WritingRoute = WritingRouteImport.update({
   id: '/writing',
   path: '/writing',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/books': typeof BooksRouteWithChildren
   '/contact': typeof ContactRoute
   '/press': typeof PressRoute
+  '/profile': typeof ProfileRoute
   '/writing': typeof WritingRoute
   '/books/$slug': typeof BooksSlugRoute
   '/books/': typeof BooksIndexRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/press': typeof PressRoute
+  '/profile': typeof ProfileRoute
   '/writing': typeof WritingRoute
   '/books/$slug': typeof BooksSlugRoute
   '/books': typeof BooksIndexRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/books': typeof BooksRouteWithChildren
   '/contact': typeof ContactRoute
   '/press': typeof PressRoute
+  '/profile': typeof ProfileRoute
   '/writing': typeof WritingRoute
   '/books/$slug': typeof BooksSlugRoute
   '/books/': typeof BooksIndexRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/books'
     | '/contact'
     | '/press'
+    | '/profile'
     | '/writing'
     | '/books/$slug'
     | '/books/'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/press'
+    | '/profile'
     | '/writing'
     | '/books/$slug'
     | '/books'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/books'
     | '/contact'
     | '/press'
+    | '/profile'
     | '/writing'
     | '/books/$slug'
     | '/books/'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   BooksRoute: typeof BooksRouteWithChildren
   ContactRoute: typeof ContactRoute
   PressRoute: typeof PressRoute
+  ProfileRoute: typeof ProfileRoute
   WritingRoute: typeof WritingRoute
 }
 
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       path: '/press'
       fullPath: '/press'
       preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/writing': {
@@ -209,6 +229,7 @@ const rootRouteChildren: RootRouteChildren = {
   BooksRoute: BooksRouteWithChildren,
   ContactRoute: ContactRoute,
   PressRoute: PressRoute,
+  ProfileRoute: ProfileRoute,
   WritingRoute: WritingRoute,
 }
 export const routeTree = rootRouteImport

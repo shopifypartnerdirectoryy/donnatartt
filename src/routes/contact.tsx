@@ -22,10 +22,17 @@ export const Route = createFileRoute("/contact")({
 
 const lines = [
   {
-    label: "Publisher, US",
-    body: "Alfred A. Knopf and Little, Brown and Company, New York.",
+    label: "Direct author contact",
+    body: "Direct author contact information is not publicly listed.",
   },
-  { label: "Representation", body: "ICM Partners, New York." },
+  {
+    label: "Publishers & rights",
+    body: "Alfred A. Knopf and Little, Brown and Company, New York; Bloomsbury / Penguin in the UK. Set out in full on the author profile.",
+  },
+  {
+    label: "Representation",
+    body: "Aragi Inc. (US & Canada) and RCW Literary Agency (UK / global); formerly ICM Partners, New York.",
+  },
   {
     label: "Corrections",
     body: "Errors of fact in these pages are the archive's own. Write and they will be amended.",
