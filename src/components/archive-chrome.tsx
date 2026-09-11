@@ -45,7 +45,6 @@ export function SiteFooter() {
     <footer className="mt-32 border-t border-border/60">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-12 text-[0.72rem] uppercase tracking-[0.22em] text-muted-foreground md:flex-row md:justify-between">
         <span>Three novels, 1992&ndash;2013</span>
-        <span>An unofficial reference archive</span>
       </div>
     </footer>
   );
