@@ -61,11 +61,6 @@ function Contact() {
                 </div>
               ))}
             </dl>
-            <p className="mt-16 max-w-lg text-sm leading-relaxed text-muted-foreground">
-              The author does not maintain public correspondence addresses. This
-              archive is independent and unaffiliated with the author or her
-              publishers.
-            </p>
           </div>
         </div>
       </main>
